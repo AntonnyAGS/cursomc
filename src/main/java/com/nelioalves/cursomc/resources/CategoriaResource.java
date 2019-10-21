@@ -1,8 +1,6 @@
 package com.nelioalves.cursomc.resources;
 
 import java.net.URI;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,11 +25,6 @@ public class CategoriaResource {
 		Categoria obj = service.find(id);	
 		return ResponseEntity.ok(obj);
 	}
-	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<?> findAll(){
-		List<Categoria> lista = service.findAll();
-		return ResponseEntity.ok(lista);
-	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> insert (@RequestBody Categoria obj){
@@ -49,4 +42,9 @@ public class CategoriaResource {
 		return ResponseEntity.noContent().build();
 	}
 
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable Integer id){
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
 }
