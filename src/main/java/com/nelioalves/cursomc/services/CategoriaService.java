@@ -28,4 +28,9 @@ public class CategoriaService {
 		List<Categoria> categorias = (ArrayList<Categoria>) repo.findAll();
 		return categorias;
 	}
+	
+	public Categoria insert(Categoria obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
 }
