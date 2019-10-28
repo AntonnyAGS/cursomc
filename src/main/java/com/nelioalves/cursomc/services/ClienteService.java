@@ -37,7 +37,6 @@ public class ClienteService {
 				"Objeto não encontrado! ID:" + id + ", Tipo: " + Cliente.class.getName()));
 	}
 
-	
 	@Transactional
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
