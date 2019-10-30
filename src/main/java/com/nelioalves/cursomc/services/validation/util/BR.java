@@ -1,4 +1,4 @@
-package com.nelioalves.cursomc.services.validation.utils;
+package com.nelioalves.cursomc.services.validation.util;
 
 public class BR {
 	// CPF
