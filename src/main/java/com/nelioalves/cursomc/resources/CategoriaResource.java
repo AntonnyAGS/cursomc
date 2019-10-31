@@ -72,7 +72,4 @@ public class CategoriaResource {
 		Page<CategoriaDTO> listaDTO = lista.map(obj -> new CategoriaDTO(obj));
 		return ResponseEntity.ok(listaDTO);
 	}
-	
-	
-	
 }
